@@ -1,0 +1,10 @@
+%h2 truck index
+= render partial: 'truck', collection: @trucks
+
+%h2 truck inline show buttons
+- @trucks.each do |truck|
+  %button.show_truck{type: :button, data: {url: url_for(truck), target: "#truck_display"}}
+    #{truck.wheels}-wheeler
+
+%h2 truck inline display right below this
+%pre#truck_display
